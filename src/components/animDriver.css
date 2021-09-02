@@ -1,0 +1,32 @@
+h1{
+    position: fixed;
+}
+
+.text-load{
+    opacity: 0;
+}
+.fade-in{
+    animation: fade-in 1s both;
+}
+.flick-down{
+    animation: flick-down 1s both;
+}
+@keyframes fade-in {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+@keyframes flick-down {
+    from {
+        transform: translateY(0%); 
+        opacity: 100%;
+    }
+    to {
+        transform: translateY(200%);
+        
+        opacity: 0%;
+    }
+}
