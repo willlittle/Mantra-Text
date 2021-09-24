@@ -1,6 +1,6 @@
 import './animDriver.css'
 import {useState, useEffect} from 'react'
-const TextAnim = () => {
+const TextAnim = ({messageArrayProp}) => {
     //List of messages, sort stupid
     const messages = ['Not your keys not your cypto', 'Just remember, never sell', 'Make a donation to a whale today, try leveraged trading']
     //These next two states controll the className attribute of each H1 tag
@@ -28,7 +28,7 @@ const TextAnim = () => {
         }
         // This method of changing the message is not great
         if (itCount === 2) {
-            if (message > messages.length -2){
+            if (message > messageArrayProp.length -2){
                 setMessage(-1)
             }
             setMessage(prevMess => prevMess +=1)
@@ -47,7 +47,7 @@ const TextAnim = () => {
     return (
         <div className='cont'>
             <h1 className={messageLifeCycle}>
-                {messages[message]}
+                {messageArrayProp[message]}
             </h1>
             <h1 className={confirmingLifeCycle}>
                 confirming
